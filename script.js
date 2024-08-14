@@ -20,19 +20,17 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     const teams = [
-        { id: 'team1', agents: ['anby', 'grace', 'anton'], element: 'electric', name: 'Mono Electric'},
-        { id: 'team2', agents: ['anby', 'nicole', 'billy'], element: '', name: 'Starter' },
-        { id: 'team3', agents: ['soldier11', 'ben', 'koleda'], element: 'fire', name: 'Mono Fire' },
-        { id: 'team4', agents: ['grace', 'nicole', 'anby'], element: 'ether', name: 'Mono Ether' },
-        { id: 'team5', agents: ['zhuyuan', 'nicole', 'anby'], element: 'ether', name: 'Mono Ether 2' },
-        { id: 'team6', agents: ['zhuyuan', 'lycaon', 'rina'], element: '', name: 'Zhu Yuan Premium' },
-        { id: 'team7', agents: ['grace', 'rina', 'anton'], element: 'electric', name: 'Mono Electric Shock' },
-        { id: 'team8', agents: ['piper', 'lucy', 'nekomata'], element: '', name: 'Piper Team Comp' },
-        { id: 'team9', agents: ['ellen', 'soukaku', 'lycaon'], element: 'ice', name: 'Mono Ice'},
-        { id: 'team10', agents: ['nekomata', 'nicole', 'piper'], element: '', name: 'Nekomata Team Comp'},
-        { id: 'team11', agents: ['soldier11', 'koleda', 'lucy'], element: '', name: 'Soldier 11 Team Comp'},
-        { id: 'team13', agents: ['soldier11', 'koleda', 'ben'], element: 'fire', name: 'Mono Fire 2'},
-
+        { id: 'starter', agents: ['anby', 'nicole', 'billy'], element: '', name: 'Starter' },
+        { id: 'mono-fire', agents: ['soldier11', 'ben', 'koleda'], element: 'fire', name: 'Mono Fire' },
+        { id: 'mono-fire-2', agents: ['soldier11', 'koleda', 'lucy'], element: '', name: 'Mono Fire 2'},
+        { id: 'mono-ether', agents: ['grace', 'nicole', 'anby'], element: 'ether', name: 'Mono Ether' },
+        { id: 'mono-ether-2', agents: ['zhuyuan', 'nicole', 'anby'], element: 'ether', name: 'Mono Ether 2' },
+        { id: 'mono-electric', agents: ['anby', 'grace', 'anton'], element: 'electric', name: 'Mono Electric'},
+        { id: 'mono-electric-2', agents: ['grace', 'rina', 'anton'], element: 'electric', name: 'Mono Electric 2' },
+        { id: 'mono-ice', agents: ['ellen', 'soukaku', 'lycaon'], element: 'ice', name: 'Mono Ice'},
+        { id: 'team6', agents: ['zhuyuan', 'lycaon', 'rina'], element: '', name: 'Zhu Yuan Team' },
+        { id: 'team8', agents: ['piper', 'lucy', 'nekomata'], element: '', name: 'Piper Team' },
+        { id: 'team10', agents: ['nekomata', 'nicole', 'piper'], element: '', name: 'Nekomata Team'},
     ];
     const selectedAgents = new Set();
     const agentList = document.getElementById('agentList');
