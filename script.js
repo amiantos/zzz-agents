@@ -47,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const teamGrid = document.getElementById('teamGrid');
     const suggestedAgentEl = document.getElementById('suggestedAgent');
 
+    // sort agents by agent.name
+    agents.sort((a, b) => a.name.localeCompare(b.name));
+
     // Generate the agent list dynamically as cards
     agents.forEach(agent => {
         const agentCard = document.createElement('li');
@@ -93,9 +96,16 @@ document.addEventListener('DOMContentLoaded', function () {
         teamName.className = 'team-name';
         teamName.textContent = `${team.name}`;
         teamCell.appendChild(teamName);
-    
+
+        // Sort agents alphabetically by name before generating elements
+        const sortedAgents = team.agents.slice().sort((a, b) => {
+            const agentA = agents.find(agent => agent.id === a).name.toLowerCase();
+            const agentB = agents.find(agent => agent.id === b).name.toLowerCase();
+            return agentA.localeCompare(agentB);
+        });
+
         // Generate agent elements within the team cell
-        team.agents.forEach(agentId => {
+        sortedAgents.forEach(agentId => {
             const agentElement = document.createElement('div');
             agentElement.className = 'agent';
             agentElement.setAttribute('data-agent', agentId);
