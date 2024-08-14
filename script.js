@@ -28,7 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 'ultimate-assault', agents: ['nekomata', 'nicole', 'piper'], element: '', name: 'Ultimate Assault'},
         { id: 'disorder-team', agents: ['piper', 'grace', 'lucy'], element: '', name: 'Disorder Anomaly'},
 
+        { id: 'cunning-hares-team', agents: ['nekomata', 'anby', 'nicole'], element: '', name: 'Cunning Hares'},
         { id: 'victoria-team', agents: ['ellen', 'rina', 'lycaon'], element: '', name: 'Victoria Housekeeping'},
+        { id: 'belobog-team', agents: ['anton', 'koleda', 'ben'], element: '', name: 'Belobog Heavy Industries'},
         { id: 'zhu-yuan-best', agents: ['zhuyuan', 'lycaon', 'rina'], element: '', name: 'Zhu Yuan' },
 
         { id: 'physical', agents: ['nekomata', 'piper', 'lucy'], element: 'physical', name: 'Physical'},
