@@ -3,11 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Composition Selector</title>
+    <title>ZZZ Agent Focus Helper</title>
     <style>
+        /* Styles for the agent selection list as cards */
+        .agent-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px; /* Add margin to separate from team grid */
+        }
+
+        .agent-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 120px;
+            height: 240px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            overflow:hidden;
+        }
+
+        .agent-card img {
+            height: 80%;
+            width: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .agent-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .agent-card-selected {
+            background-color: #c0c0f0;
+            border-color: #888;
+        }
+
+        .agent-name {
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Styles for the team composition grid */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr); /* Adjust columns as needed */
             gap: 10px;
         }
 
@@ -17,6 +66,7 @@
             padding: 20px;
             background-color: #f0f0f0;
             border: 1px solid #ccc;
+            border-radius: 8px;
         }
 
         .agent {
@@ -35,23 +85,6 @@
             background-color: lightgreen;
         }
 
-        .agent-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .agent-list li {
-            cursor: pointer;
-            padding: 10px;
-            margin: 5px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-        }
-
-        #suggestions {
-            margin-top: 20px;
-        }
-
         .highlight-complete {
             border: 2px solid gold;
             background-color: lightgreen;
@@ -63,32 +96,13 @@
     
     <h2>Select Your Agents</h2>
     <ul class="agent-list" id="agentList">
-        <li data-agent="agent1">Agent 1</li>
-        <li data-agent="agent2">Agent 2</li>
-        <li data-agent="agent3">Agent 3</li>
-        <li data-agent="agent4">Agent 4</li>
-        <li data-agent="agent5">Agent 5</li>
-        <li data-agent="agent6">Agent 6</li>
+        <!-- Agent list will be generated here -->
     </ul>
 
     <h2>Team Compositions</h2>
+    <P>Team compositions are from <a href="https://zenless.gg/">https://zenless.gg/</a></P>
     <div class="team-grid" id="teamGrid">
-        <div class="team-cell" data-team="team1">
-            <div class="agent" data-agent="agent1">Agent 1</div>
-            <div class="agent" data-agent="agent2">Agent 2</div>
-            <div class="agent" data-agent="agent3">Agent 3</div>
-        </div>
-        <div class="team-cell" data-team="team2">
-            <div class="agent" data-agent="agent4">Agent 4</div>
-            <div class="agent" data-agent="agent5">Agent 5</div>
-            <div class="agent" data-agent="agent6">Agent 6</div>
-        </div>
-        <div class="team-cell" data-team="team3">
-            <div class="agent" data-agent="agent1">Agent 1</div>
-            <div class="agent" data-agent="agent4">Agent 4</div>
-            <div class="agent" data-agent="agent5">Agent 5</div>
-        </div>
-        <!-- Add more team compositions here -->
+        <!-- Team compositions will be generated here -->
     </div>
 
     <div id="suggestions">
@@ -96,6 +110,7 @@
         <p id="suggestedAgent">Select agents to see suggestions.</p>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
