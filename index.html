@@ -12,18 +12,27 @@
         }
 
         .team-cell {
+            display: flex;
+            justify-content: space-around;
             padding: 20px;
             background-color: #f0f0f0;
             border: 1px solid #ccc;
-            text-align: center;
         }
 
-        .highlight-complete {
+        .agent {
+            width: 50px;
+            height: 50px;
+            background-color: #ddd;
+            border: 1px solid #aaa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .highlight {
             background-color: lightgreen;
-        }
-
-        .highlight-incomplete {
-            background-color: lightcoral;
         }
 
         .agent-list {
@@ -42,6 +51,11 @@
         #suggestions {
             margin-top: 20px;
         }
+
+        .highlight-complete {
+            border: 2px solid gold;
+            background-color: lightgreen;
+        }
     </style>
 </head>
 <body>
@@ -59,9 +73,21 @@
 
     <h2>Team Compositions</h2>
     <div class="team-grid" id="teamGrid">
-        <div class="team-cell" data-team="team1">Agent 1, Agent 2, Agent 3</div>
-        <div class="team-cell" data-team="team2">Agent 4, Agent 5, Agent 6</div>
-        <div class="team-cell" data-team="team3">Agent 1, Agent 4, Agent 5</div>
+        <div class="team-cell" data-team="team1">
+            <div class="agent" data-agent="agent1">Agent 1</div>
+            <div class="agent" data-agent="agent2">Agent 2</div>
+            <div class="agent" data-agent="agent3">Agent 3</div>
+        </div>
+        <div class="team-cell" data-team="team2">
+            <div class="agent" data-agent="agent4">Agent 4</div>
+            <div class="agent" data-agent="agent5">Agent 5</div>
+            <div class="agent" data-agent="agent6">Agent 6</div>
+        </div>
+        <div class="team-cell" data-team="team3">
+            <div class="agent" data-agent="agent1">Agent 1</div>
+            <div class="agent" data-agent="agent4">Agent 4</div>
+            <div class="agent" data-agent="agent5">Agent 5</div>
+        </div>
         <!-- Add more team compositions here -->
     </div>
 

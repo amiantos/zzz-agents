@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const selectedAgents = new Set();
     const agentList = document.getElementById('agentList');
-    const teamGrid = document.getElementById('teamGrid');
     const suggestedAgentEl = document.getElementById('suggestedAgent');
 
     const teams = [
@@ -31,14 +30,23 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateTeamHighlights() {
         teams.forEach(team => {
             const teamCell = document.querySelector(`[data-team="${team.id}"]`);
-            const selectedCount = team.agents.filter(agent => selectedAgents.has(agent)).length;
+            let allAgentsSelected = true;
 
-            teamCell.classList.remove('highlight-complete', 'highlight-incomplete');
+            team.agents.forEach(agent => {
+                const agentElement = document.querySelector(`[data-team="${team.id}"] [data-agent="${agent}"]`);
+                
+                if (selectedAgents.has(agent)) {
+                    agentElement.classList.add('highlight');
+                } else {
+                    agentElement.classList.remove('highlight');
+                    allAgentsSelected = false;
+                }
+            });
 
-            if (selectedCount === team.agents.length) {
+            if (allAgentsSelected) {
                 teamCell.classList.add('highlight-complete');
-            } else if (selectedCount > 0) {
-                teamCell.classList.add('highlight-incomplete');
+            } else {
+                teamCell.classList.remove('highlight-complete');
             }
         });
     }
