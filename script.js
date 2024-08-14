@@ -17,19 +17,28 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 'soukaku', name: 'Soukaku', image: 'images/soukaku.webp' },
         { id: 'zhuyuan', name: 'Zhu Yuan', image: 'images/zhu-yuan.webp' },
         { id: 'billy', name: 'Billy', image: 'images/billy.webp' },
+        { id: 'corin', name: 'Corin', image: 'images/corin.webp' },
     ];
 
     const teams = [
         { id: 'starter', agents: ['anby', 'nicole', 'billy'], element: '', name: 'Starter' },
-        { id: 'mono-fire', agents: ['soldier11', 'ben', 'koleda'], element: 'fire', name: 'Mono Fire' },
-        { id: 'mono-fire-2', agents: ['soldier11', 'koleda', 'lucy'], element: '', name: 'Mono Fire 2'},
-        { id: 'mono-ether', agents: ['zhuyuan', 'nicole', 'anby'], element: 'ether', name: 'Mono Ether' },
-        { id: 'mono-electric', agents: ['anby', 'grace', 'anton'], element: 'electric', name: 'Mono Electric'},
-        { id: 'mono-electric-2', agents: ['grace', 'rina', 'anton'], element: 'electric', name: 'Mono Electric 2' },
-        { id: 'mono-ice', agents: ['ellen', 'soukaku', 'lycaon'], element: 'ice', name: 'Mono Ice'},
-        { id: 'zhu-yuan-team', agents: ['zhuyuan', 'lycaon', 'rina'], element: '', name: 'Zhu Yuan Team' },
-        { id: 'piper-team', agents: ['piper', 'lucy', 'nekomata'], element: '', name: 'Piper Team' },
-        { id: 'neko-team', agents: ['nekomata', 'nicole', 'piper'], element: '', name: 'Nekomata Team'},
+        { id: 'early', agents: ['anby', 'nicole', 'anton'], element: '', name: 'Early Team' },
+
+        { id: 'shock-stun', agents: ['corin', 'rina', 'anby'], element: '', name: 'Shock and Stun'},
+        { id: 'ultimate-assault', agents: ['nekomata', 'nicole', 'piper'], element: '', name: 'Ultimate Assault'},
+        { id: 'disorder-team', agents: ['piper', 'grace', 'lucy'], element: '', name: 'Disorder Anomaly'},
+
+        { id: 'victoria-team', agents: ['ellen', 'rina', 'lycaon'], element: '', name: 'Victoria Housekeeping'},
+        { id: 'zhu-yuan-best', agents: ['zhuyuan', 'lycaon', 'rina'], element: '', name: 'Zhu Yuan' },
+
+        { id: 'physical', agents: ['nekomata', 'piper', 'lucy'], element: 'physical', name: 'Physical'},
+        { id: 'fire', agents: ['soldier11', 'koleda', 'lucy'], element: 'fire', name: 'Fire'},
+        { id: 'mono-fire', agents: ['soldier11', 'ben', 'koleda'], element: 'fire', name: 'Fire 2' },
+        { id: 'ice', agents: ['ellen', 'soukaku', 'lycaon'], element: 'ice', name: 'Ice'},
+        { id: 'electric', agents: ['anton', 'grace', 'rina'], element: 'electric', name: 'Electric' },
+        { id: 'electric2', agents: ['anby', 'grace', 'anton'], element: 'electric', name: 'Electric 2'},
+        { id: 'ether', agents: ['zhuyuan', 'anby', 'nicole'], element: 'ether', name: 'Ether' },
+
     ];
     const selectedAgents = new Set();
     const agentList = document.getElementById('agentList');
