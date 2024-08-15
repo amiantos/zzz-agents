@@ -22,23 +22,39 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     const teams = [
-        { id: 'starter', agents: ['anby', 'nicole', 'billy'], element: '', name: 'Starter' },
-        { id: 'early', agents: ['anby', 'nicole', 'anton'], element: '', name: 'Early Game - Game8' },
+        { id: 'starter', agents: ['anby', 'nicole', 'billy'], element: '', name: 'F2P Starter' },
 
-        { id: 'cunning-hares-team', agents: ['nekomata', 'anby', 'nicole'], element: '', name: 'Best Cunning Hares'},
-        { id: 'victoria-team', agents: ['ellen', 'rina', 'lycaon'], element: '', name: 'Best Victoria Housekeeping'},
-        { id: 'belobog', agents: ['anton', 'koleda', 'ben'], element: '', name: 'Best Belobog' },
+        { id: 'cunning-hares-team', agents: ['nekomata', 'anby', 'nicole'], element: '', name: 'Cunning Hares'},
+        { id: 'victoria-team', agents: ['ellen', 'rina', 'lycaon'], element: '', name: 'Victoria Housekeeping'},
+        { id: 'belobog', agents: ['anton', 'koleda', 'ben'], element: '', name: 'Belobog' },
 
-        { id: 'physical-g8', agents: ['nekomata', 'piper', 'lucy'], element: 'physical', name: 'Physical - Game8' },
-        { id: 'ice-g8', agents: ['ellen', 'soukaku', 'lycaon'], element: 'ice', name: 'Ice - Game8'},
-        { id: 'electric-g8', agents: ['anton', 'grace', 'rina'], element: 'electric', name: 'Electric - Game8' },
-        { id: 'ether-g8', agents: ['zhuyuan', 'qingyi', 'nicole'], element: 'ether', name: 'Ether - Game8' },
-        { id: 'fire-g8', agents: ['soldier11', 'koleda', 'lucy'], element: 'fire', name: 'Fire - Game8'},
+        { id: 'physical-g8', agents: ['nekomata', 'piper', 'lucy'], element: 'physical', name: 'Physical Premium' },
+        { id: 'ice-g8', agents: ['ellen', 'soukaku', 'lycaon'], element: 'ice', name: 'Ice Premium'},
+        { id: 'electric-g8', agents: ['anton', 'grace', 'rina'], element: 'electric', name: 'Electric Premium' },
+        { id: 'ether-g8', agents: ['zhuyuan', 'qingyi', 'nicole'], element: 'ether', name: 'Ether Premium' },
+        { id: 'fire-g8', agents: ['soldier11', 'koleda', 'lucy'], element: 'fire', name: 'Fire Premium'},
 
-        { id: 'mono-fire-2', agents: ['soldier11', 'ben', 'koleda'], element: 'fire', name: 'Fire' },
-        { id: 'electric2', agents: ['anby', 'grace', 'anton'], element: 'electric', name: 'Electric'},
-        { id: 'electric3', agents: ['qingyi', 'grace', 'anton'], element: 'electric', name: 'Electric' },
-        { id: 'ether', agents: ['zhuyuan', 'anby', 'nicole'], element: 'ether', name: 'Ether' },
+        { id: 'ellen-f2p-g8', agents: ['ellen', 'anby', 'soukaku'], element: '', name: 'Ellen F2P'},
+        { id: 'zhuyuan-f2p-g8', agents: ['zhuyuan', 'anby', 'nicole'], element: '', name: 'Zhu Yuan F2P'},
+        { id: 'zhuyuan-premium-g8', agents: ['zhuyuan', 'lycaon', 'rina'], element: '', name: 'Zhu Yuan Premium'},
+        { id: 'lycaon-f2p-g8', agents: ['corin', 'lycaon', 'soukaku'], element: '', name: 'Lycaon F2P'},
+        { id: 'qingyi-f2p-g8', agents: ['billy', 'qingyi', 'nicole'], element: '', name: 'Qingyi F2P'},
+        { id: 'qingyi-electric-g8', agents: ['anton', 'qingyi', 'rina'], element: '', name: 'Qingyi Premium'},
+        { id: 'soukaku-f2p-g8', agents: ['billy', 'anby', 'soukaku'], element: '', name: 'Soukaku F2P'},
+        { id: 'rina-f2p-g8', agents: ['billy', 'anby', 'rina'], element: '', name: 'Rina F2P'},
+        { id: 'grace-f2p-g8', agents: ['grace', 'anby', 'soukaku'], element: '', name: 'Grace F2P'},
+        { id: 'koleda-premium-g8', agents: ['soldier11', 'koleda', 'ben'], element: '', name: 'Koleda Premium'},
+        { id: 'koleda-f2p-g8', agents: ['corin', 'koleda', 'ben'], element: '', name: 'Koleda F2P'},
+        { id: 'lucy-f2p-g8', agents: ['soldier11', 'ben', 'lucy'], element: '', name: 'Lucy semi-F2P'},
+        { id: 'nekomata-premium-g8', agents: ['nekomata', 'lycaon', 'nicole'], element: '', name: 'Nekomata Premium'},
+        { id: 'soldier11-f2p-g8', agents: ['soldier11', 'ben', 'nicole'], element: '', name: 'Soldier 11 F2P'},
+        { id: 'anby-premium-g8', agents: ['anton', 'anby', 'grace'], element: '', name: 'Anby Premium'},
+        { id: 'piper-f2p-g8', agents: ['piper', 'anby', 'nicole'], element: '', name: 'Piper F2P'},
+        { id: 'anton-f2p-g8', agents: ['anton', 'anby', 'nicole'], element: '', name: 'Anton F2P' },
+        { id: 'anton-premium-g8', agents: ['anton', 'qingyi', 'grace'], element: '', name: 'Anton Premium' },
+        { id: 'corin-f2p-g8', agents: ['corin', 'billy', 'anby'], element: '', name: 'Corin F2P' },
+        { id: 'corin-premium-g8', agents: ['corin', 'lycaon', 'rina'], element: '', name: 'Corin Premium' },
+        { id: 'billy-premium-g8', agents: ['billy', 'lycaon', 'nicole'], element: '', name: 'Billy Premium' },
 
     ];
     const selectedAgents = new Set();
