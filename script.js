@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 'ether-g8', agents: ['zhuyuan', 'qingyi', 'nicole'], element: 'ether', name: 'Ether - Game8' },
         { id: 'fire-g8', agents: ['soldier11', 'koleda', 'lucy'], element: 'fire', name: 'Fire - Game8'},
 
-        { id: 'mono-fire-2', agents: ['soldier11', 'ben', 'koleda'], element: 'fire', name: 'Mono Fire' },
-        { id: 'electric2', agents: ['anby', 'grace', 'anton'], element: 'electric', name: 'Mono Electric'},
-        { id: 'electric3', agents: ['qingyi', 'grace', 'anton'], element: 'electric', name: 'Mono Electric' },
+        { id: 'mono-fire-2', agents: ['soldier11', 'ben', 'koleda'], element: 'fire', name: 'Fire' },
+        { id: 'electric2', agents: ['anby', 'grace', 'anton'], element: 'electric', name: 'Electric'},
+        { id: 'electric3', agents: ['qingyi', 'grace', 'anton'], element: 'electric', name: 'Electric' },
         { id: 'ether', agents: ['zhuyuan', 'anby', 'nicole'], element: 'ether', name: 'Ether' },
 
     ];
