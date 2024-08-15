@@ -23,26 +23,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const teams = [
         { id: 'starter', agents: ['anby', 'nicole', 'billy'], element: '', name: 'Starter' },
-        { id: 'early', agents: ['anby', 'nicole', 'anton'], element: '', name: 'Early Team' },
+        { id: 'early', agents: ['anby', 'nicole', 'anton'], element: '', name: 'Early Game - Game8' },
 
-        { id: 'shock-stun', agents: ['corin', 'rina', 'anby'], element: '', name: 'Shock and Stun'},
-        { id: 'ultimate-assault', agents: ['nekomata', 'nicole', 'piper'], element: '', name: 'Ultimate Assault'},
-        { id: 'disorder-team', agents: ['piper', 'grace', 'lucy'], element: '', name: 'Disorder Anomaly'},
+        { id: 'cunning-hares-team', agents: ['nekomata', 'anby', 'nicole'], element: '', name: 'Best Cunning Hares'},
+        { id: 'victoria-team', agents: ['ellen', 'rina', 'lycaon'], element: '', name: 'Best Victoria Housekeeping'},
+        { id: 'belobog', agents: ['anton', 'koleda', 'ben'], element: '', name: 'Best Belobog' },
 
-        { id: 'cunning-hares-team', agents: ['nekomata', 'anby', 'nicole'], element: '', name: 'Cunning Hares'},
-        { id: 'victoria-team', agents: ['ellen', 'rina', 'lycaon'], element: '', name: 'Victoria Housekeeping'},
-        { id: 'belobog-team', agents: ['anton', 'koleda', 'ben'], element: '', name: 'Belobog Heavy Industries'},
-        { id: 'zhu-yuan-best', agents: ['zhuyuan', 'lycaon', 'rina'], element: '', name: 'Zhu Yuan' },
+        { id: 'physical-g8', agents: ['nekomata', 'piper', 'lucy'], element: 'physical', name: 'Physical - Game8' },
+        { id: 'ice-g8', agents: ['ellen', 'soukaku', 'lycaon'], element: 'ice', name: 'Ice - Game8'},
+        { id: 'electric-g8', agents: ['anton', 'grace', 'rina'], element: 'electric', name: 'Electric - Game8' },
+        { id: 'ether-g8', agents: ['zhuyuan', 'qingyi', 'nicole'], element: 'ether', name: 'Ether - Game8' },
+        { id: 'fire-g8', agents: ['soldier11', 'koleda', 'lucy'], element: 'fire', name: 'Fire - Game8'},
 
-        { id: 'physical', agents: ['nekomata', 'piper', 'lucy'], element: 'physical', name: 'Physical'},
-        { id: 'fire', agents: ['soldier11', 'koleda', 'lucy'], element: 'fire', name: 'Mono Fire'},
-        { id: 'mono-fire', agents: ['soldier11', 'ben', 'koleda'], element: 'fire', name: 'Mono Fire 2' },
-        { id: 'ice', agents: ['ellen', 'soukaku', 'lycaon'], element: 'ice', name: 'Mono Ice'},
-        { id: 'electric', agents: ['anton', 'grace', 'rina'], element: 'electric', name: 'Mono Electric' },
-        { id: 'electric2', agents: ['anby', 'grace', 'anton'], element: 'electric', name: 'Mono Electric 2'},
-        { id: 'electric3', agents: ['qingyi', 'grace', 'anton'], element: 'electric', name: 'Mono Electric 3'},
+        { id: 'mono-fire-2', agents: ['soldier11', 'ben', 'koleda'], element: 'fire', name: 'Mono Fire' },
+        { id: 'electric2', agents: ['anby', 'grace', 'anton'], element: 'electric', name: 'Mono Electric'},
+        { id: 'electric3', agents: ['qingyi', 'grace', 'anton'], element: 'electric', name: 'Mono Electric' },
         { id: 'ether', agents: ['zhuyuan', 'anby', 'nicole'], element: 'ether', name: 'Ether' },
-        { id: 'ether2', agents: ['zhuyuan', 'qingyi', 'nicole'], element: 'ether', name: 'Ether 2' },
 
     ];
     const selectedAgents = new Set();
