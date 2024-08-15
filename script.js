@@ -1,23 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Define the data model with images
     const agents = [
-        { id: 'anby', name: 'Anby', image: 'images/anby.webp' },
-        { id: 'anton', name: 'Anton', image: 'images/anton.webp' },
-        { id: 'ben', name: 'Ben', image: 'images/ben.webp' },
-        { id: 'ellen', name: 'Ellen', image: 'images/ellen.webp' },
-        { id: 'grace', name: 'Grace', image: 'images/grace.webp' },
-        { id: 'koleda', name: 'Koleda', image: 'images/koleda.webp' },
-        { id: 'soldier11', name: 'Soldier 11', image: 'images/soldier-11.webp' },
-        { id: 'lucy', name: 'Lucy', image: 'images/lucy.webp' },
-        { id: 'lycaon', name: 'Lycaon', image: 'images/lycaon.webp' },
-        { id: 'nekomata', name: 'Nekomata', image: 'images/nekomata.webp' },
-        { id: 'nicole', name: 'Nicole', image: 'images/nicole.webp' },
-        { id: 'piper', name: 'Piper', image: 'images/piper.webp' },
-        { id: 'rina', name: 'Rina', image: 'images/rina.webp' },
-        { id: 'soukaku', name: 'Soukaku', image: 'images/soukaku.webp' },
-        { id: 'zhuyuan', name: 'Zhu Yuan', image: 'images/zhu-yuan.webp' },
-        { id: 'billy', name: 'Billy', image: 'images/billy.webp' },
-        { id: 'corin', name: 'Corin', image: 'images/corin.webp' },
+        { id: 'anby', name: 'Anby', image: 'images/anby.webp', rating: 75 },
+        { id: 'anton', name: 'Anton', image: 'images/anton.webp', rating: 77 },
+        { id: 'ben', name: 'Ben', image: 'images/ben.webp', rating: 70 },
+        { id: 'ellen', name: 'Ellen', image: 'images/ellen.webp', rating: 97 },
+        { id: 'grace', name: 'Grace', image: 'images/grace.webp', rating: 90 },
+        { id: 'koleda', name: 'Koleda', image: 'images/koleda.webp', rating: 87 },
+        { id: 'soldier11', name: 'Soldier 11', image: 'images/soldier-11.webp', rating: 92 },
+        { id: 'lucy', name: 'Lucy', image: 'images/lucy.webp', rating: 86 },
+        { id: 'lycaon', name: 'Lycaon', image: 'images/lycaon.webp', rating: 96 },
+        { id: 'nekomata', name: 'Nekomata', image: 'images/nekomata.webp', rating: 91 },
+        { id: 'nicole', name: 'Nicole', image: 'images/nicole.webp', rating: 73 },
+        { id: 'piper', name: 'Piper', image: 'images/piper.webp', rating: 84 },
+        { id: 'rina', name: 'Rina', image: 'images/rina.webp', rating: 93 },
+        { id: 'soukaku', name: 'Soukaku', image: 'images/soukaku.webp', rating: 94 },
+        { id: 'zhuyuan', name: 'Zhu Yuan', image: 'images/zhu-yuan.webp', rating: 95 },
+        { id: 'billy', name: 'Billy', image: 'images/billy.webp', rating: 69 },
+        { id: 'corin', name: 'Corin', image: 'images/corin.webp', rating: 65 },
+        { id: 'qingyi', name: 'Qingyi', image: 'images/qingyi.png', rating: 95 },
     ];
 
     const teams = [
@@ -34,12 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 'zhu-yuan-best', agents: ['zhuyuan', 'lycaon', 'rina'], element: '', name: 'Zhu Yuan' },
 
         { id: 'physical', agents: ['nekomata', 'piper', 'lucy'], element: 'physical', name: 'Physical'},
-        { id: 'fire', agents: ['soldier11', 'koleda', 'lucy'], element: 'fire', name: 'Fire'},
-        { id: 'mono-fire', agents: ['soldier11', 'ben', 'koleda'], element: 'fire', name: 'Fire 2' },
-        { id: 'ice', agents: ['ellen', 'soukaku', 'lycaon'], element: 'ice', name: 'Ice'},
-        { id: 'electric', agents: ['anton', 'grace', 'rina'], element: 'electric', name: 'Electric' },
-        { id: 'electric2', agents: ['anby', 'grace', 'anton'], element: 'electric', name: 'Electric 2'},
+        { id: 'fire', agents: ['soldier11', 'koleda', 'lucy'], element: 'fire', name: 'Mono Fire'},
+        { id: 'mono-fire', agents: ['soldier11', 'ben', 'koleda'], element: 'fire', name: 'Mono Fire 2' },
+        { id: 'ice', agents: ['ellen', 'soukaku', 'lycaon'], element: 'ice', name: 'Mono Ice'},
+        { id: 'electric', agents: ['anton', 'grace', 'rina'], element: 'electric', name: 'Mono Electric' },
+        { id: 'electric2', agents: ['anby', 'grace', 'anton'], element: 'electric', name: 'Mono Electric 2'},
+        { id: 'electric3', agents: ['qingyi', 'grace', 'anton'], element: 'electric', name: 'Mono Electric 3'},
         { id: 'ether', agents: ['zhuyuan', 'anby', 'nicole'], element: 'ether', name: 'Ether' },
+        { id: 'ether2', agents: ['zhuyuan', 'qingyi', 'nicole'], element: 'ether', name: 'Ether 2' },
 
     ];
     const selectedAgents = new Set();
@@ -64,9 +67,13 @@ document.addEventListener('DOMContentLoaded', function () {
         agentName.className = 'agent-name';
         agentName.textContent = agent.name;
 
+        const agentRating = document.createElement('div');
+        agentRating.className = 'agent-rating';
+        agentRating.textContent = `Rating: ${agent.rating}`;
+
         agentCard.appendChild(agentImage);
         agentCard.appendChild(agentName);
-
+        agentCard.appendChild(agentRating);
         agentList.appendChild(agentCard);
 
         // Add event listener for selecting/deselecting agents
@@ -85,17 +92,39 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    teams.forEach(team => {
+        // avg_rating var is average rating of agents on team
+        const avg_rating = Math.round(team.agents.reduce((acc, agent) => {
+            return acc + agents.find(a => a.id === agent).rating;
+        }, 0) / team.agents.length);
+
+        team.rating = avg_rating;
+    });
+
+    // order teams by team.rating
+    teams.sort((a, b) => b.rating - a.rating);
+
     // Generate the team grid dynamically with images
     teams.forEach(team => {
         const teamCell = document.createElement('div');
         teamCell.className = 'team-cell';
         teamCell.setAttribute('data-team', team.id);
+
+        const metaContainer = document.createElement('div');
+        metaContainer.className = 'meta-container';
+        teamCell.appendChild(metaContainer);
     
         // Add team name and element at the top of the teamCell
         const teamName = document.createElement('div');
         teamName.className = 'team-name';
         teamName.textContent = `${team.name}`;
-        teamCell.appendChild(teamName);
+        metaContainer.appendChild(teamName);
+
+        // Add team rating at the top of the teamCell
+        const teamRating = document.createElement('div');
+        teamRating.className = 'team-rating';
+        teamRating.textContent = `Avg Rating: ${team.rating}`;
+        metaContainer.appendChild(teamRating);
 
         // Sort agents alphabetically by name before generating elements
         const sortedAgents = team.agents.slice().sort((a, b) => {
@@ -167,14 +196,21 @@ document.addEventListener('DOMContentLoaded', function () {
                     agentCounts[agent] = { count: 0, teams: [] };
                 }
                 agentCounts[agent].count += 1;
-                agentCounts[agent].teams.push(team.name);
+                agentCounts[agent].teams.push(team);
             }
         });
     
         const sortedAgents = Object.entries(agentCounts)
             .sort((a, b) => b[1].count - a[1].count)
             .map(([agent, data]) => {
-                const teamList = data.teams.join(', ');
+                // const teamList = data.teams.join(', ');
+                // build teamList var as comma separated list of data.teams.team.name
+                const teamList = data.teams
+                    .sort((a, b) => b.rating - a.rating)
+                    .map(team => {
+                        return `${team.name} (${team.rating})`;
+                    })
+                    .join(', ');
                 return `${agents.find(a => a.id === agent).name} can complete ${data.count} team(s): ${teamList}`;
             });
     
